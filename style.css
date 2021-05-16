@@ -9,28 +9,28 @@
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(to right, #00AAFF, #00AAfd);
+  background: linear-gradient(to right, #00aaff, #00aafd);
 }
 
 .calculator_grid {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    /* 전체적인 컨텐츠가 센터에 와야해서 */
-    min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  /* 전체적인 컨텐츠가 센터에 와야해서 */
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
 .calculator_grid > button {
-    cursor: pointer;
-    font-size: 2rem;
-    border: 1px solid white;
-    outline: none;
-    background: rgba(255, 255, 255, .75);
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background: rgba(255, 255, 255, 0.75);
 }
 .calculator_grid > button:hover {
-  background: rgba(255, 255, 255, .9 );
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .span_two {
@@ -38,5 +38,25 @@ body {
 }
 
 .output {
-  
+  grid-column: 1/ -1;
+  /* 컬럼 번호 1번에서 -1번까지 영역을 주면 위로 올라간다. */
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  /* 넘치는 단어 자르기 여부- 단어 넘침이 없음 */
+  word-break: break-all;
+
+}
+
+.output .prev_operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+.output .current_operand {
+  color: white;
+  font-size: 2.5rem;
 }
