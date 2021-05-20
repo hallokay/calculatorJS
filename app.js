@@ -12,10 +12,12 @@ class Calculator {
         this.currentOperand = '';
         this.prevOperand = '';
         this.operation = undefined;
+//         어디서 정의되었는지..
     }
 
     delete() {
          this.currentOperand = this.currentOperand.toString().slice(0, -1);
+//         0부터 -1까지...
     }
 
     appendNumber(number) {
@@ -40,7 +42,7 @@ class Calculator {
         let computation;
         const prev = parseFloat(this.prevOperand),
             current = parseFloat(this.currentOperand);
-        
+         // // parseFloat 문자열을 실수로 바꿈 parseFloat( string )
 
         if( isNaN(prev) || isNaN(current)) return
 
@@ -85,6 +87,7 @@ class Calculator {
         }    
 
         if(decimalDigits != null) {
+//             왜 !==하면 안되는지..?
             return `${integerDisplay}.${decimalDigits}`
         } else {
             return integerDisplay
